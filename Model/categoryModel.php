@@ -17,6 +17,45 @@ class categoryModel {
 	public function closeDB() {
 		$this -> conn -> close();
 	}
+    
+    
+    
+    
+    
+    
+    public function addCategory($id, $label){
+        $ccn = mysql_connect("localhost","root","")or die("connecton error");
+		mysql_select_db("AuctionForAction",$ccn)or die("selection error");
+			
+		$sql = "SELECT * FROM menu WHERE id= '$id'";
+		$rs = mysql_query($sql,$ccn) or die("query error");
+			
+
+		$sig = 0;
+
+		while ($row = mysql_fetch_array($rs)) {
+				if ($id == $row["id"])
+				$sig = 1;
+		}
+
+
+		if($sig==0){
+			$sqll = "INSERT INTO menu (id, label) VALUES ('$id', '$label')";
+			$rs = mysql_query($sqll,$ccn) or die("Insertion error");		
+			echo "<script type='text/javascript'>alert('successfull')</script>";
+			
+		}else {
+			echo "<script type='text/javascript'>alert('Already Exist!')</script>";
+			
+    }
+    }
+        
+        
+        
+        
+        
+        
+        
 
 	public function getCategory() {
 		$this -> openDB();
