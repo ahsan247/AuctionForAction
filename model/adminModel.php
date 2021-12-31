@@ -12,7 +12,7 @@ die("Connection failed:" . $conn -> connect_error);
 //------------------delete campaign----------------------
 
 if (isset($_POST['dltctg'])) {
-//	echo '<div style="width:49%; float:left;"><h2>Campaign Table</h2>';
+
 	$id=$_REQUEST['id'];
 	$sql = "DELETE FROM menu WHERE id=$id ORDER BY id";
 	$conn -> query($sql);
@@ -20,17 +20,14 @@ if (isset($_POST['dltctg'])) {
 	$sql = "SELECT id,label FROM menu";
 	$result = $conn -> query($sql);
 	if ($result -> num_rows > 0) {
-//	echo '
-//	<div class="alert alert-success" role="alert"> Data successfully removed.</div>';
+
 
 	while ($row = $result -> fetch_assoc()) {
-//	echo '
-//	<div class="alert alert-success" role="alert"> Data successfully removed.</div>';         
+      
         
 	}
         echo '<meta http-equiv="refresh" content="0; admin.php">';
 
-//	echo "</table></div>";    
 	} else {
         
         echo '<meta http-equiv="refresh" content="0; admin.php">';
@@ -47,7 +44,7 @@ if (isset($_POST['dltctg'])) {
 //------------------delete product----------------------
 
 elseif (isset($_POST['dltpr'])) {
-//	echo '<div style="width:49%; float:left;"><h2>Product Table</h2>';
+
 	$id=$_REQUEST['pid'];
 	$sql = "DELETE FROM addproducts WHERE pid=$id";
 	$conn -> query($sql);
@@ -57,13 +54,12 @@ elseif (isset($_POST['dltpr'])) {
 	if ($result -> num_rows > 0) {	
 
 	while ($row = $result -> fetch_assoc()) {
-//	echo '
-//	<div class="alert alert-success" role="alert"> Data successfully removed.</div>';
+
 	}
         echo '<meta http-equiv="refresh" content="0; admin.php">';
-//	echo "</table></div>";
+
 	} else {
-//	echo "0 results";
+
         echo '<meta http-equiv="refresh" content="0; admin.php">';
 	}
 }
@@ -71,7 +67,7 @@ elseif (isset($_POST['dltpr'])) {
 //--------------------delete user----------------------
 
 elseif (isset($_POST['dltuser'])) {
-//	echo '<div style="width=49%; float:left;"><h2>User Table</h2>';
+
 	$id=$_REQUEST['uid'];
 	$sql = "DELETE FROM details WHERE uid=$id";
 	$result = $conn -> query($sql);
@@ -81,11 +77,10 @@ elseif (isset($_POST['dltuser'])) {
 	if ($result -> num_rows > 0) {
 	
 	while ($row = $result -> fetch_assoc()) {
-//	echo '
-//	<div class="alert alert-success" role="alert"> Data successfully removed.</div>';
+
 	}
         echo '<meta http-equiv="refresh" content="0; admin.php">';
-//	echo "</table></div>";
+
         
 	} else {
 	echo '<meta http-equiv="refresh" content="0; admin.php">';
@@ -96,7 +91,7 @@ elseif (isset($_POST['dltuser'])) {
 //-----------------------update bid time------------------------
 
 elseif (isset($_POST['btime' ])) {
-//	echo '<div style="width:49%; float:left;"><h2>Product Table</h2>';
+
 	$id=$_REQUEST['prid'];
 	$btime=$_REQUEST['bidtime'];	
 	
@@ -106,23 +101,13 @@ elseif (isset($_POST['btime' ])) {
 	$sql = "SELECT pid,title,price,btime FROM addproducts ORDER BY pid";
 	$result = $conn -> query($sql);
 	if ($result -> num_rows > 0) {
-//	echo '
-//	<table class="table table-striped table-bordered table-hover table-condensed" align="center" style="width:50%">
-//	<tr class="info">
-//	<th>ID</th>
-//	<th>Title</th>
-//	<th>Price</th>
-//	<th>Bidtime</th>
-//	</tr>';
+
 
 	while ($row = $result -> fetch_assoc()) {
-//	echo "
-//	<tr>
-//		<td>" . $row["pid"] . "</td><td>" . $row["title"] . "</td><td>" . $row["price"] . "</td><td>" . $row["btime"] . "</td>
-//	</tr>";
+
 	}
         echo '<meta http-equiv="refresh" content="0; admin.php">';
-//	echo "</table></div>";
+
 	} else {
 	echo '<meta http-equiv="refresh" content="0; admin.php">';
 	}
