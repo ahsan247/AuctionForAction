@@ -61,51 +61,6 @@ class singupModel {
 		}
 	}
 
-	//	public function singupA($email, $fname, $lname, $mno, $pass) {
-		// $this -> openDB();
-// 
-		// $stmt = $this -> conn -> prepare("SELECT * FROM admin WHERE Email=?");
-// 
-		// $stmt -> bind_param("s", $email);
-		// $stmt -> execute();
-		// $sig = 0;
-// 
-		// while ($res = $stmt -> get_result()) {
-			// if ($name == $res["Name"])
-				// $sig = 1;
-// 
-		// }
-// 
-		// $stmt = $this -> conn -> prepare("INSERT INTO admin(Email, FirstName, LastName, MOb, password)VALUES (?,?,?,?,?)");
-// 
-		// $stmt -> bind_param("sssss", $email, $fname, $lname, $mno, $pass);
-// 
-		// if ($sig == 0) {
-			// $stmt -> execute();
-			// $res = $stmt -> get_result();
-			// $this -> closeDB();
-		// } else {
-			// echo "<script type='text/javascript'>alert('Already Exist!')</script>";
-			// include 'view/home.php';
-		// }
-// 
-	// }
-// 
-	// public function loginA($email, $pass) {
-		// $this -> openDB();
-		// $stmt = $this -> conn -> prepare("SELECT * FROM admin WHERE Email=? AND password=?");
-// 
-		// $stmt -> bind_param("ss", $email, $pass);
-		// if ($stmt -> execute()) {
-			// $res = $stmt -> get_result();
-			// $this -> closeDB();
-			// return $res -> fetch_object();
-// 
-		// } else {
-			// return FALSE;
-		// }
-// 
-	// }
 
 	public function logout() {
 
